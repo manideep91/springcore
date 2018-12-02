@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/util
+                    http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="employeeXmlBean" class="com.mmdworks.springcourse.test.Employee">
+		<property name="eName" value="Manideep XML"></property>
+		<property name="eSal" value="10"></property>
+		<property name="addressList" ref="addressXMLBean"></property>
+		<property name="friends" ref="friendList"></property>
+
+	</bean>
+
+	<bean id="addressXMLBean" class="com.mmdworks.springcourse.test.Address">
+		<constructor-arg value="XML Street" />
+		<constructor-arg value="XML AREA" />
+	</bean>
+
+	<util:list id="friendList" value-type="java.lang.String">
+		<value>Friend 1</value>
+		<value>Friend 2</value>
+	</util:list>
+
+
+</beans>
